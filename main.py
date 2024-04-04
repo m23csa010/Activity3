@@ -29,7 +29,7 @@ optimizers = {
     'Adam',
     'Adagrad',
     'Adadelta',
-    # 'RMSprop': optim.RMSprop(resnet50.parameters(), lr=0.001),
+    'RMSprop'
 }
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -46,6 +46,8 @@ def train_model(model, name, train_loader, test_loader, num_epochs=10):
         optimizer = optim.Adam(resnet50.parameters(), lr=0.001)
     elif name == "Adagrad":
         optimizer = optim.Adagrad(resnet50.parameters(), lr=0.001)
+    elif name == "RMSProp":
+        optimizer =  optim.RMSprop(resnet50.parameters(), lr=0.001)
     else:
         optimizer = optim.Adadelta(resnet50.parameters(), lr=0.001)
 
