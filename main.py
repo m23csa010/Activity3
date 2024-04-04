@@ -140,5 +140,6 @@ plt.title('Training Accuracy')
 plt.legend()
 plt.show()
 
+
 for item in results:
-    print(results[item]["top_5_acc"])
+    print("Top 5 Acc. =",  results[item]["top_5_acc"])
