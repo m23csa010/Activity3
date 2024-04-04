@@ -87,8 +87,9 @@ def train_model(model, name, train_loader, test_loader, num_epochs=10):
     with torch.no_grad():
         model.eval()
         for inputs, labels in test_loader:
-            inputs = inputs.to(device)
-            labels = labels.to(device)
+            inputs = inputs   #.to(device)
+            labels = labels   #.to(device)
+            #Commit to introduce unexpected error
             outputs = outputs.to(device)
             outputs = model(inputs)
 
